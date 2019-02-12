@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- 안드로이드 홈화면 추가시 상단 주소창 제거 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 아이폰 홈화면 추가시 상단 주소창 제거 -->    
+    <title>TAK YEONOU PORTFOLIO</title>    
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fullpage.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />    
+</head>
+<body>
+    <div id="wrap">
+        <div id="header" class="clear">
+            <h1 id="logo"><!-- logo -->
+                <a href="./index.html"><img src="./images/logo.png" alt="탁연우 포트폴리오"></a>
+            </h1>
+            <div id="toggle_btn"><!-- menu btn -->
+                <img src="./images/toggle_btn.png" alt="메뉴 버튼">
+            </div>            
+        </div><!-- Header End -->
+        <div id="nav"><!-- menu -->
+            <ul>
+                <li><a href="#firstpage">HOME</a></li>
+                <li><a href="#secondpage">WORKS</a></li>
+                <li><a href="#thirdpage">ABOUT</a></li>
+                <li><a href="#fourthpage">CONTACT</a></li>
+            </ul>
+            <div id="close_btn"><!-- close btn -->
+                <img src="./images/close_btn.png" alt="닫기 버튼">
+            </div>
+        </div><!-- menu end -->            
+        <div id="footer">
+            <span>
+                COPYRIGHT &copy; 2018 TAK YEONOU ALL RIGHTS RESERVED
+            </span>
+        </div><!-- Footer end -->        
+        <div id="fullpage">
+            <!-- Home Page -->
+            <div id="section0" class="section" data-anchor="firstpage">
+                <div id="home_title">
+                    <img src="./images/home_title.png" alt="TAK YEONOU">
+                </div>
+                <div class="down">
+                    <img src="./images/home_down_btn.png" alt="스크롤 다운">               
+                </div>
+            </div><!-- Home Page End -->
+            <!-- Works Page -->
+            <div id="section1" class="section" data-anchor="secondpage">
+                <div class="title">
+                    <h2>01</h2>
+                    <div class="title_line"></div>
+                    <span>WORKS</span>
+                </div>
+                <div class="content">
+                    <div class="inner_box">
+                        <div id="works_slide">
+                            <ul>
+                                <li>
+                                    <h3>BRANDING</h3>
+                                    <span>Web/Mobile</span>
+                                    <a href="./pt01_laon.html" target="_blank"></a>
+                                </li>
+                                <li>
+                                    <h3>RENEWAL</h3>
+                                    <span>Responsive</span>
+                                    <a href="./pt02_malibu.html" target="_blank"></a>
+                                </li>
+                                <li>
+                                    <a href=""></a>
+                                </li>      
+                            </ul>                            
+                        </div>    
+                        <div class="slide_btn">
+                            <button class="left_btn">
+                                <img src="./images/works_pre_btn.png" alt="이전 페이지">
+                            </button>
+                            <button class="right_btn">
+                                <img src="./images/works_next_btn.png" alt="다음 페이지">
+                            </button>
+                        </div>
+                        <div class="slide_page">
+                            <div class="current_area"></div>
+                            <span class="total_area">/</span>
+                        </div>
+                    </div><!-- Inner Box End -->
+                </div><!-- Content End -->
+            </div><!-- Works Page End -->
+            
+            <!-- About Page -->
+            <div id="section2" class="section" data-anchor="thirdpage">
+                <div class="title">
+                    <h2>02</h2>
+                    <div class="title_line"></div>
+                    <span>ABOUT</span>
+                </div>
+                <div class="content">
+                    <div class="inner_box">
+                        <h3></h3>
+                        <div></div>
+                    </div><!-- Inner Box End -->
+                </div><!-- Content End -->                    
+            </div><!-- About Page End -->
+            <!-- Contact Page -->
+            <div id="section3" class="section" data-anchor="fourthpage">
+                <div class="title">
+                    <h2>03</h2>
+                    <div class="title_line"></div>
+                    <span>CONTACT</span>
+                </div>
+                <div class="content">
+                    <div class="inner_box">
+                        <ul id="contact" class="clear">
+                            <li>
+                                <a href="tel:010-2284-0946">
+                                    <img src="./images/contact_call.png" alt="전화">
+                                </a>
+                                <span>CALL</span>
+                                <span><a href="tel:010-2284-0946">010-2284-0946</a></span>
+                            </li>
+                            <li>
+                                <a href="mailto:yeonou@gmail.com">
+                                    <img src="./images/contact_mail.png" alt="이메일">
+                                </a>    
+                                <span>EMAIL</span>
+                                <span><a href="mailto:yeonou@gmail.com">yeonou@gmail.com</a></span>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/yeonou/" target="_blank">
+                                    <img src="./images/contact_sns.png" alt="인스타그램">
+                                </a>
+                                <span>INSTAGRAM</span>
+                                <span><a href="https://www.instagram.com/yeonou/" target="_blank">@yeonou</a></span>
+                            </li>
+                        </ul><!-- contact end -->
+                        <div id="resume">
+                            <a href="#">RESUME</a>
+                            <a href="#">COVER LETTER</a>
+                        </div>
+                    </div><!-- Inner Box End -->
+                </div><!-- Content End -->
+            </div><!-- Contact Page End -->
+        </div><!-- Fullpage End -->        
+    </div><!-- Wrap End -->    
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.fullpage.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript">
+        /* Full Page Scroll */
+        $(document).ready(function(){
+            $('#fullpage').fullpage({
+                navigation:true,
+                anchors: ['firstpage', 'secondpage', 'thirdpage', 'fourthpage']
+            });            
+        });
+    </script>
+</body>
+</html>
