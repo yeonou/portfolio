@@ -66,6 +66,7 @@ html, body {
 body {
     background-color:#3a3a3a;
     color:#fff;
+    overflow:hidden;
 }
 #wrap::before {
     content:'';
