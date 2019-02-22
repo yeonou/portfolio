@@ -155,30 +155,41 @@ $(function(){
         $('#about_slide>ul').animate({left:-moveLeft},600);
     });
     
+    
     /* About Skills */
     
-        $('.chart').each(function(){
-             
-            var $circleRight = $(this).find('.right .circle_inner').css({transform:'rotate(0)'}),
-            $circleLeft = $(this).find('.left .circle_inner').css({transform:'rotate(0)'}),            
-            $percentNumber = $(this).find('.percent_number'),
-            percentData = $percentNumber.text();            
-            
-            $({percent:0}).delay(800).animate({percent:percentData},{
-                duration:1500,
-                progress: function(){
-                    var now = this.percent,
-                        deg = now * 360/100,
-                        degRight = Math.min(Math.max(deg,0),180),
-                        degLeft = Math.min(Math.max(deg-180,0),180);
-                    $circleRight.css({transform:'rotate('+degRight+'deg'});
-                    $circleLeft.css({transform:'rotate('+degLeft+'deg)'});
-                    $percentNumber.text(Math.floor(now));                    
-                }
-            });           
-           
-        });   
-  
+    $('.chart').each(function(){
+
+        var $circleRight = $(this).find('.right .circle_inner').css({transform:'rotate(0)'}),
+        $circleLeft = $(this).find('.left .circle_inner').css({transform:'rotate(0)'}),            
+        $percentNumber = $(this).find('.percent_number'),
+        percentData = $percentNumber.text();            
+
+        $({percent:0}).delay(800).animate({percent:percentData},{
+        duration:1500,
+        progress: function(){
+                var now = this.percent,
+                    deg = now * 360/100,
+                    degRight = Math.min(Math.max(deg,0),180),
+                    degLeft = Math.min(Math.max(deg-180,0),180);
+                $circleRight.css({transform:'rotate('+degRight+'deg'});
+                $circleLeft.css({transform:'rotate('+degLeft+'deg)'});
+                $percentNumber.text(Math.floor(now));                    
+            }
+        });
+        
+    });
+    
+    /* Contact Hover */
+    
+    $('#contact li').hover(function(){
+             var contactSrc = $(this).attr('class');
+             $(this).find('img').attr('src','./images/contact_'+contactSrc+'_hover.png');
+    }, function(){
+             var contactSrc = $(this).attr('class');
+             $(this).find('img').attr('src','./images/contact_'+contactSrc+'.png');
+    }, 300);
+      
     
 });
 
