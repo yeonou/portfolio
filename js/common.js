@@ -153,6 +153,7 @@ $(function(){
     
     
     /* About Slide */
+    
     var aboutSlideNum = $('#about_slide li').length;
     var aboutSlideImgW = $('#about_slide').width();
     $('#about_slide ul').width(aboutSlideNum*aboutSlideImgW);
@@ -205,7 +206,7 @@ $(function(){
         var scrollTop = $(window).scrollTop();
         var workTop = $('#section1').offset().top;
         var aboutTop = $('#section2').offset().top;
-        if(scrollTop >= workTop+200 && scrollTop <= aboutTop+200 ){ 
+        if(scrollTop === aboutTop ){ 
             activePercent();    
         }else {
             zeroPercent();
@@ -220,8 +221,8 @@ $(function(){
                     $percentNumber = $(this).find('.percent_number'),
                     percentData = $percentNumber.text();            
 
-                    $({percent:0}).delay(150*i).animate({percent:percentData},{
-                        duration:3000,
+                    $({percent:0}).stop().delay(150*i).animate({percent:percentData},{
+                        duration:2000,
                         progress: function(){
                                 var now = this.percent,
                                     deg = now * 360/100,
