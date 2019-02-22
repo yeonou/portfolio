@@ -206,7 +206,7 @@ $(function(){
         var scrollTop = $(window).scrollTop();
         var workTop = $('#section1').offset().top;
         var aboutTop = $('#section2').offset().top;
-        if(scrollTop === aboutTop ){ 
+        if(scrollTop >= aboutTop-10 && scrollTop <= aboutTop+10 ){ 
             activePercent();    
         }else {
             zeroPercent();
