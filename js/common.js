@@ -203,6 +203,7 @@ $(function(){
     /* About Skills */
     
     $(window).scroll(function(){
+        
         var scrollTop = $(window).scrollTop();
         var workTop = $('#section1').offset().top;
         var aboutTop = $('#section2').offset().top;
@@ -212,10 +213,9 @@ $(function(){
             zeroPercent();
         }
         
-        function activePercent(){
+        function activePercent(){            
             if( $('#skills').hasClass('active') === false ){
                 $('.chart').each(function(i){
-
                     var $circleRight = $(this).find('.right .circle_inner').css({transform:'rotate(0)'}),
                     $circleLeft = $(this).find('.left .circle_inner').css({transform:'rotate(0)'}),            
                     $percentNumber = $(this).find('.percent_number'),
