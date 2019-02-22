@@ -17,6 +17,12 @@ $(function(){
     });
     
     
+    /* Nav 클릭시 Scroll 이동 */
+    
+    $('#nav li').find('a').click(function(event){
+        event.preventDefault();       $('html,body').animate({scrollTop:$(this.hash).offset().top},600);
+    });
+    
     /* Close Button */
     
     $('#p_close_btn').click(function(){
@@ -158,27 +164,58 @@ $(function(){
     
     /* About Skills */
     
-    $('.chart').each(function(){
+    $(window).scroll(function(){
+        var scrollTop = $(window).scrollTop();
+        var workTop = $('#section1').offset().top;
+        var aboutTop = $('#section2').offset().top;
+        if(scrollTop >= workTop+200 && scrollTop <= aboutTop+200 ){ 
+            activePercent();    
+        }else {
+            zeroPercent();
+        }
+        
+        function activePercent(){
+            if( $('#skills').hasClass('active') === false ){
+                $('.chart').each(function(i){
 
-        var $circleRight = $(this).find('.right .circle_inner').css({transform:'rotate(0)'}),
-        $circleLeft = $(this).find('.left .circle_inner').css({transform:'rotate(0)'}),            
-        $percentNumber = $(this).find('.percent_number'),
-        percentData = $percentNumber.text();            
+                    var $circleRight = $(this).find('.right .circle_inner').css({transform:'rotate(0)'}),
+                    $circleLeft = $(this).find('.left .circle_inner').css({transform:'rotate(0)'}),            
+                    $percentNumber = $(this).find('.percent_number'),
+                    percentData = $percentNumber.text();            
 
-        $({percent:0}).delay(800).animate({percent:percentData},{
-        duration:1500,
-        progress: function(){
-                var now = this.percent,
-                    deg = now * 360/100,
-                    degRight = Math.min(Math.max(deg,0),180),
-                    degLeft = Math.min(Math.max(deg-180,0),180);
-                $circleRight.css({transform:'rotate('+degRight+'deg'});
-                $circleLeft.css({transform:'rotate('+degLeft+'deg)'});
-                $percentNumber.text(Math.floor(now));                    
-            }
-        });
+                    $({percent:0}).delay(150*i).animate({percent:percentData},{
+                        duration:3000,
+                        progress: function(){
+                                var now = this.percent,
+                                    deg = now * 360/100,
+                                    degRight = Math.min(Math.max(deg,0),180),
+                                    degLeft = Math.min(Math.max(deg-180,0),180);
+                                $circleRight.css({transform:'rotate('+degRight+'deg)'});
+                                $circleLeft.css({transform:'rotate('+degLeft+'deg)'});
+                                $percentNumber.text(Math.floor(now));                    
+                            }
+                        });
+                });
+            };
+            $('#skills').removeClass('unactive');
+            $('#skills').addClass('active');
+        };
+        
+        function zeroPercent(){
+            if( $('#skills').hasClass('unactive') === false ){
+                 $('.chart').each(function(){
+                    var $circleRight = $(this).find('.right .circle_inner').css({transform:'rotate(0)'}),
+                    $circleLeft = $(this).find('.left .circle_inner').css({transform:'rotate(0)'}),            
+                    $percentNumber = $(this).find('.percent_number'),
+                    percentData = $percentNumber.text();
+                });   
+            };
+            $('#skills').removeClass('active');
+            $('#skills').addClass('unactive');
+        };
         
     });
+
     
     /* Contact Hover */
     

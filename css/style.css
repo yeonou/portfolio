@@ -78,18 +78,19 @@ body {
     z-index:-10;       
 }
 #wrap .section {
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100vh;
     /*height:100vh;*/    
     position:relative;    
 }
 .section .content {
-    position:relative;
+    position:absolute;
     left:50%;
-    -o-transform:translateX(-50%);
-    -moz-transform:translateX(-50%);
-    -webkit-transform:translateX(-50%);
-    transform:translateX(-50%);
+    top:50%;
+    -o-transform:translate3D(-50%,-50%,0);
+    -moz-transform:translate3D(-50%,-50%,0);
+    -webkit-transform:translate3D(-50%,-50%,0);
+    transform:translate3D(-50%,-50%,0);
 }
 .section .inner_box {
     width:100%;   
@@ -246,7 +247,7 @@ body {
 #footer {
     width:100%;
     text-align:center;
-    position:absolute;
+    position:fixed;
     bottom:0;
     font-family:'Cabin',sans-serif;
     font-weight:200;    
