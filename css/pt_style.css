@@ -1,0 +1,919 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900|Cabin:400,500,600,700|Raleway:100,200,300,400,500,600,700,800,900|Maven+Pro:400,500,700,900|Nanum+Gothic:400,700,800&subset=korean');
+
+/* Reset CSS */
+body, div, ul, li, h1, h2, h3, h4, a, img, p, span, input, button {
+    margin:0;
+    padding:0;
+    -o-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+li { list-style:none; }
+a {
+    text-decoration:none;
+    color:#fff;
+}
+button {
+    display:block;
+    background-color:transparent;
+    border:0;
+}
+img{
+    border:0;
+    display:block;
+    max-width:100%;
+}
+html, body {
+    width:100%;
+    height:100%;
+    font-family:'맑은고딕','Malgungothic', '나눔고딕', 'Nanumgothic', '돋움', 'Dotum', 'Gothic', sans-serif;
+}
+
+
+/* Media Query Font */
+@media (max-width:360px){html{font-size:10px;}}
+@media (min-width:361px) and (max-width:399px){html{font-size:11px;}}
+@media (min-width:400px) and (max-width:439px){html{font-size:12px;}}
+@media (min-width:440px) and (max-width:479px){html{font-size:13px;}}
+@media (min-width:480px) and (max-width:519px){html{font-size:14px;}}
+@media (min-width:520px) and (max-width:559px){html{font-size:15px;}}
+@media (min-width:560px) and (max-width:599px){html{font-size:16px;}}
+@media (min-width:600px) and (max-width:639px){html{font-size:17px;}}
+@media (min-width:640px) and (max-width:679px){html{font-size:18px;}}
+@media (min-width:680px) and (max-width:719px){html{font-size:19px;}}
+@media (min-width:720px) and (max-width:759px){html{font-size:20px;}}
+@media (min-width:760px) and (max-width:799px){html{font-size:21px;}}
+@media (min-width:800px) and (max-width:839px){html{font-size:22px;}}
+@media (min-width:840px) and (max-width:879px){html{font-size:23px;}}
+@media (min-width:880px){html{font-size:24px;}}
+
+
+
+/* Clearfix */
+.clear::after {
+    content:'';
+    display:block;
+    clear:both;
+}
+
+
+
+/* COMMON */
+
+body {
+    background-color:#3a3a3a;
+    color:#fff;
+}
+#wrap {
+    position:relative;
+}
+#wrap::before {
+    content:'';
+    display:block;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:-10;       
+}
+#wrap .intro {
+    width:100%;
+    /*height:100;*/
+    height:100vh;    
+    position:relative;    
+}
+.intro .content {
+    width:100%;
+    height:100%;
+}
+.intro .inner_box {
+    width:100%;   
+    height:100%;
+    background:url(../images/pt_malibu_intro_bg.png) center left;
+    background-size:cover;
+    -o-box-shadow:0 0 30px 0px rgba(0,0,0,.5);
+    -moz-box-shadow:0 0 30px 0px rgba(0,0,0,.5);
+    -webkit-box-shadow:0 0 30px 0px rgba(0,0,0,.5);
+    box-shadow:0 0 30px 0px rgba(0,0,0,.5);
+    position:relative;
+}
+#wrap div{
+    text-align:center;
+}
+
+
+/* HEADER */
+
+#header {
+    width:100%;
+    position:fixed;
+    z-index:100;
+}
+#header #logo {
+    float:left;
+}
+#header #logo img {
+    /*width:100px;*/
+    height:auto;
+}
+#header #toggle_btn {
+    float:right;
+    cursor:pointer;
+}
+#header #toggle_btn img {    
+    height:auto;
+}
+#nav {
+    width:100%;
+    height:100vh;
+    position:fixed;
+    background-color:rgba(0,0,0,.9);
+    z-index:1000;
+    display:none;
+    transition:display 600s;
+}
+#nav ul {
+    position:absolute;
+    top:50%;
+    left:50%;
+    -o-transform:translateX(-50%) translateY(-50%);
+    -moz-transform:translateX(-50%) translateY(-50%);
+    -webkit-transform:translateX(-50%) translateY(-50%);
+    transform:translateX(-50%) translateY(-50%);
+    font-family:'Raleway',sans-serif;
+    font-weight:600;
+    text-align:center;
+}
+#nav li {
+    margin:1rem 0;    
+}    
+#nav li a {
+    transition:all 300ms ease;
+}
+#nav li:hover a {
+    color:#eec317;
+}
+#nav #close_btn {
+    float:right;
+    cursor:pointer;
+}
+#nav #close_btn img {
+    height:auto;
+}
+
+
+/* FOOTER */
+
+#footer {
+    width:100%;
+    text-align:center;
+    position:absolute;
+    bottom:0;
+    font-family:'Cabin',sans-serif;
+    font-weight:200;    
+}
+
+
+/* INTRO PAGE */
+
+.intro .down {
+    position:absolute;
+    left:50%;
+    -o-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    cursor:pointer;    
+}
+.intro .down img {   
+    height:auto;
+}
+.intro .txt_box {
+    text-align:center;
+    position:absolute;
+    top:0;
+    left:50%;    
+    transform:translateX(-50%);
+    word-break:keep-all;
+}
+.intro .txt_box .title {
+    font-family:'Maven Pro', sans-serif;
+    font-weight:500; 
+}
+.intro h2 {
+    font-family:'Raleway', sans-serif;
+    font-weight:900;    
+}
+.intro h3 {
+    font-family:'Maven Pro', sans-serif;
+    font-weight:400;
+}
+.intro p {
+    font-family:'NanumGothic','Gothic', sans-serif;
+    font-weight:400;
+}
+.intro .overview p {
+    display:inline-block;    
+}
+.intro .overview p span:first-of-type {
+    color:#fbbb02;
+}
+ 
+
+/* Link */
+
+.link {
+    width:100%;
+    position:absolute;
+}
+.link a {
+    display:inline-block;
+    box-sizing:border-box;
+    border:1px solid #efefef;    
+}
+.link a:hover {
+    background:#efefef;
+    color:#111;
+    transition:.5s;
+}
+
+
+/* MockUp PAGE */
+
+#section5 {
+    position:relative;
+}
+.control_btn a {
+    width:120px;
+    height:35px;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+}
+.control_btn a img {    
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+}
+.control_btn a p {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+}
+.control_btn a p span {
+    display:block;
+    font-family:'Raleway', sans-serif;    
+}
+.control_btn a p span:nth-of-type(1) {
+    font-weight:400;
+}
+.control_btn p span:nth-of-type(2) {
+    font-weight:100;
+}
+.control_btn .prev img {
+    left:0;
+}
+.control_btn .prev  p span {
+    text-align:left;
+}
+.control_btn .next img {
+    right:0;
+}
+.control_btn .next p {
+    text-align:right;
+}
+
+
+/* Return Button */
+
+.return_btn {
+    display:block;    
+    position:fixed;
+    box-sizing:border-box;
+    border:1px solid #efefef;
+    text-align:center;    
+}
+.return_btn span {
+    display:block;
+    width:100%;
+    height:100%;
+    background:url(../images/return_btn.png) no-repeat center center;
+    background-size:cover;
+    text-indent:-9999%; 
+    transition:.8s;
+}
+.return_btn:hover span {
+    background:url(../images/return_btn_hover.png) no-repeat center center;
+    background-size:cover;
+    transition:.5s;
+}
+.return_btn:hover:before {
+    content:'';
+    display:block;
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    background:#efefef;
+    z-index:-1;    
+}
+
+
+/* Top Button */
+
+.top_btn {
+    display:block;    
+    position:fixed;
+    box-sizing:border-box;
+    border:1px solid #efefef;
+    text-align:center;
+    color:#efefef;
+    font-family:'Raleway','Malgun Gothic','Gothic',sans-serif;
+    font-weight:500;    
+    
+}
+.top_btn:hover {
+    background:#efefef;
+    color:#111;
+    transition:.5s;
+}
+
+
+
+/* MOBILE */
+
+@media all and (max-width:759px) {
+    
+    /* COMMON */
+    
+#wrap::before {
+    /* mobile*/
+    background:url(../images/y_bg_m.png) no-repeat top left;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size:cover; 
+}
+.intro .content {
+    /* mobile */
+    padding:5.6rem 4.4rem;
+    /*padding:0 4.4rem;
+    height:82%;*/
+}
+
+
+/* HEADER */
+
+#header {
+    /* mobile */
+    height:5rem;
+    padding:10px 10px 0;
+}
+#header #logo img {
+    /* mobile */
+    width:7.2rem;
+}
+#header #toggle_btn img {
+    /* mobile */
+    width:2.5rem;
+}
+#nav ul {
+    /* mobile */
+    font-size:4rem;
+}
+#nav #close_btn {
+    /* mobile */
+    margin:1rem 1rem;
+}
+#nav #close_btn img {
+    /* mobile */
+    width:2.5rem;
+}
+    
+
+/* FOOTER */
+    
+#footer {
+    /* mobile */
+    font-size:.8rem;
+    bottom:2rem;
+}
+
+/* INTRO PAGE */
+
+.intro .down {
+    /* mobile */
+    bottom:8rem;
+}
+.intro .down img {
+    /* mobile */
+    width:2rem;
+}
+
+.intro .txt_box {
+    /* mobile */
+    width:85%;
+    top:40%;
+    transform:translate3D(-50%,-50%,0);
+}
+.intro .txt_box .title {
+    /* mobile */
+    font-size:1.2rem;    
+}
+.intro h2 {
+    /* mobile */
+    font-size:3rem;
+    margin-top:15%;
+    margin-bottom:7%;
+}
+.intro h3 {
+    /* mobile */
+    font-size:1.4rem;
+    margin-bottom:5%;
+}
+.intro .description {
+    /* mobile */
+    font-size:1rem;
+    line-height:1.5rem;
+    margin-bottom:7%;
+}
+.intro .overview p {
+    /* mobile */
+    margin-right:.2rem;
+}
+.intro .overview p:last-of-type {
+    /* mobile */
+    margin:0;
+}
+.intro .overview p span:first-of-type {
+    /* mobile */
+    font-size:1rem;
+    line-height:1.5rem;
+}
+.intro .overview p span:nth-of-type(2) {
+    /* mobile */
+    font-size:.9rem;
+}
+
+    
+/* Link */
+    
+.link {
+    /* mobile */
+    bottom:15%;    
+}    
+
+.link a {
+    /* mobile */
+    width:8rem;
+    height:2.4rem;
+    font-size:1rem;
+    line-height:2.4rem;
+}
+.link a:first-of-type {
+    /* mobile */
+    margin-right:.5rem;
+}
+ 
+    
+/* MockUp PAGE */    
+
+.control_btn a img {
+    /* mobile */
+    width:2rem;
+    height:2rem;
+}
+.control_btn a p span {
+    /* mobile */
+    font-size:.8rem;
+    line-height:1.2rem;
+}
+.control_btn .prev {
+    /* mobile */
+    left:1rem;
+}
+.control_btn .prev  p {
+    /* mobile */
+    left:1.8rem;
+}
+.control_btn .next {
+    /* mobile */
+    right:1rem;
+}
+.control_btn .next p {
+    /* mobile */
+    right:1.8rem;
+}
+
+    
+/* Return Button */
+    
+.return_btn {
+    /* mobile */
+    width:4rem;
+    height:4rem;
+    bottom:1rem;
+    left:1rem;
+    background:#333;
+}
+    
+    
+/* Top Button */
+    
+.top_btn {
+    /* mobile */
+    width:4rem;
+    height:4rem;
+    bottom:1rem;
+    right:1rem;
+    font-size:1.2rem;
+    line-height:4rem;
+    background:#333;
+}    
+
+}
+
+
+
+/* TABLET */
+
+@media all and (min-width:760px) and (max-width:1439px) {
+    
+    /* COMMON */
+    
+#wrap::before {
+    /* tablet */
+    background:url(../images/y_bg_t.png) no-repeat top left;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -webkit-background-size: cover;
+    background-size:cover; 
+}
+.intro .content {
+    /* tablet */
+    padding:5rem 4rem;
+    /*padding:0 4rem;
+    height:80%;*/
+}
+
+
+/* HEADER */
+
+#header {
+    /* tablet */
+    height:4rem;
+    padding:10px 10px 0;
+}
+#header #logo img {
+    /* tablet */
+    width:6rem;
+}
+#header #toggle_btn img {
+    /* tablet */
+    width:2rem;
+}
+#nav ul {
+    /* tablet */
+    font-size:4rem;
+}
+#nav #close_btn {
+    /* tablet */
+    margin:10px 10px;
+}
+#nav #close_btn img {
+    /* tablet */
+    width:2rem;
+}
+
+    
+/* FOOTER */
+
+#footer {
+    /* tablet */
+    font-size:.6rem;
+    bottom:1rem;
+}
+
+    
+/* INTRO PAGE */
+
+.intro .down {
+    /* tablet */
+    bottom:6rem;
+}
+.intro .down img {
+    /* tablet */
+    width:1.4rem;
+    height:auto;
+}
+.intro .txt_box {
+    /* tabelt */
+    width:80%;
+    top:5%;
+}
+.intro .txt_box .title {
+    /* tabelt */
+    font-size:1rem;    
+}
+.intro h2 {
+    /* tabelt */
+    font-size:3rem;
+    margin-top:20%;
+    margin-bottom:7%;
+}
+.intro h3 {
+    /* tabelt */
+    font-size:1.2rem;
+    margin-bottom:5%;
+}
+.intro .description {
+    /* tabelt */
+    font-size:.9rem;
+    line-height:1.5rem;
+    margin-bottom:7%;
+}
+.intro .overview p {
+    /* tabelt */
+    margin-right:.2rem;
+}
+.intro .overview p:last-of-type {
+    /* tabelt */
+    margin:0;
+}
+.intro .overview p span:first-of-type {
+    /* tabelt */
+    font-size:.9rem;
+}
+.intro .overview p span:nth-of-type(2) {
+    /* tabelt */
+    font-size:.8rem;
+}
+
+    
+/* Link */
+    
+.link {
+    /* tabelt */
+    bottom:15%;    
+}    
+
+.link a {
+    /* tablet */
+    width:6rem;
+    height:2rem;
+    font-size:.7rem;
+    line-height:2rem;
+}
+.link a:first-of-type {
+    /* tablet */
+    margin-right:1rem;
+}
+ 
+    
+/* MockUp PAGE */    
+
+.control_btn a img {
+    /* tabelt */
+    width:1.4rem;
+    height:1.4rem;
+}
+.control_btn a p span {
+    /* tabelt */
+    font-size:.7rem;
+    line-height:24px;
+}
+.control_btn .prev {
+    /* tabelt */
+    left:3rem;
+}
+.control_btn .prev  p {
+    /* tabelt */
+    left:1.5rem;
+}
+.control_btn .next {
+    /* tabelt */
+    right:3rem;
+}
+.control_btn .next p {
+    /* tabelt */
+    right:1.5rem;
+}
+
+    
+/* Return Button */    
+
+.return_btn {
+    /* tablet */
+    width:2.8rem;
+    height:2.8rem;
+    bottom:10px;
+    left:10px;
+    background:#333;
+}
+    
+    
+/* Top Button */    
+    
+.top_btn {
+    /* tablet */
+    width:2.8rem;
+    height:2.8rem;
+    bottom:10px;
+    right:10px;
+    font-size:.8rem;
+    line-height:2.8rem;
+    background:#333;
+}    
+
+}
+
+
+
+/* PC */
+
+@media all and (min-width:1440px) {
+    
+    /* COMMON */
+    
+#wrap::before {
+    /* PC */
+    background:url(../images/y_bg_w.png) no-repeat top left;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -webkit-background-size: cover;
+    background-size:cover; 
+}
+.intro .content {
+    /* PC */
+    padding:3.8rem 6.7rem;    
+}   
+
+
+/* HEADER */
+
+#header {
+    /* PC */
+    height:90px;
+    padding:30px 30px 0;
+}
+#header #logo img {
+    /* PC */
+    width:100px;
+}
+#header #toggle_btn img {
+    /* PC */
+    width:30px;
+}
+#nav ul {
+    /* PC */
+    font-size:4rem;
+}
+#nav #close_btn {
+    /* PC */
+    margin:30px 30px;        
+}
+#nav #close_btn img {
+    /* PC */
+    width:30px
+}
+    
+    
+/* FOOTER */
+
+#footer {
+    /* PC */
+    font-size:14px;
+    bottom:20px;
+}
+
+
+/* INTRO PAGE */
+
+.intro .down {
+    /* PC */
+    bottom:50px;
+}
+.intro .down img {
+    /* PC */
+    width:30px;
+}
+.intro .txt_box {
+    /* PC */
+    width:780px;
+    top:50px;
+}
+.intro .txt_box .title {
+    /* PC */
+    font-size:24px;    
+}
+.intro h2 {
+    /* PC */
+    font-size:90px;
+    margin-top:10%;
+    margin-bottom:3%;
+}
+.intro h3 {
+    /* PC */
+    font-size:36px;
+    margin-bottom:5%;
+}
+.intro .description {
+    /* PC */
+    font-size:18px;
+    line-height:30px;
+    margin-bottom:5%;
+}
+.intro .overview p {
+    /* PC */
+    margin-right:.5rem;
+}
+.intro .overview p:last-of-type {
+    /* PC */
+    margin:0;
+}
+.intro .overview p span:first-of-type {
+    /* PC */
+    font-size:20px;
+}
+.intro .overview p span:nth-of-type(2) {
+    /* PC */
+    font-size:16px;
+}
+
+    
+/* Link */
+    
+.link {
+    /* PC */
+    bottom:15%;    
+}    
+
+.link a {
+    /* PC */
+    width:160px;
+    height:40px;
+    font-size:16px;
+    line-height:40px;
+}
+.link a:first-of-type {
+    /* PC */
+    margin-right:30px;
+}
+ 
+    
+/* MockUp PAGE */    
+
+.control_btn a img {
+    width:30px;
+    height:30px;
+}
+.control_btn a p span {
+    font-size:16px;
+    line-height:24px;
+}
+.control_btn .prev {
+    left:160px;
+}
+.control_btn .prev  p {
+    left:50px;
+}
+.control_btn .next {
+    right:160px;
+}
+.control_btn .next p {
+    right:50px;
+}
+    
+    
+/* Return Button */
+    
+.return_btn {
+    /* PC */
+    width:50px;
+    height:50px;
+    bottom:50px;
+    left:30px;        
+}    
+    
+    
+/* Top Button */
+
+.top_btn {
+    /* PC */
+    width:50px;
+    height:50px;
+    bottom:50px;
+    right:30px;
+    font-size:14px;
+    line-height:50px;
+}    
+
+}
