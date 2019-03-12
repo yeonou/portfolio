@@ -489,7 +489,9 @@ body {
     /* mobile */
     margin-right:.5rem;
 }
- 
+.pt_laon_intro .link a {
+    margin-right:0;
+} 
     
 /* MockUp PAGE */    
 
@@ -684,6 +686,9 @@ body {
     /* tablet */
     margin-right:1rem;
 }
+.pt_laon_intro .link a {
+    margin-right:0;
+}
  
     
 /* MockUp PAGE */    
@@ -875,6 +880,9 @@ body {
 .link a:first-of-type {
     /* PC */
     margin-right:30px;
+}
+.pt_laon_intro .link a {
+    margin-right:0;
 }
  
     
