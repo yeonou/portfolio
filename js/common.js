@@ -90,7 +90,7 @@ $(function(){
     
     var workSlideNum = $('#works_slide li').length;//works slide 갯수
     var workSlideImgW = $('#works_slide').width();//works 이미지 넓이
-    $('#works_slide ul').width(workSlideNum*workSlideImgW);//works slide 총 넓이 
+    $('#works_slide ul').width((workSlideNum+1)*workSlideImgW);//works slide 총 넓이 
     
     $('.total_area').append(workSlideNum);//페이지 count부분에 보여질 총 갯수
     $('.slide_page').find('.current_area').append('<ul class="current"></ul>');//페이지 cout 부분에 <ul> 추가    

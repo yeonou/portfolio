@@ -660,7 +660,15 @@ body {
     -moz-background-size:cover;
     -webkit-background-size:cover;
     background-size:cover;
-}     
+}
+#section1 ul li.pt_ppp {
+    /* mobile */
+    background:url(../images/works_thumb_ppp_S.jpg) no-repeat center center;
+    -o-background-size:cover;
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+    background-size:cover;
+}
 #section1 ul li h3, #section1 ul li span {
     /* mobile */
     margin-bottom:.5rem;
@@ -937,7 +945,15 @@ body {
     -moz-background-size:cover;
     -webkit-background-size:cover;
     background-size:cover;
-}   
+}
+#section1 ul li.pt_ppp {
+    /* tabelt */
+    background:url(../images/works_thumb_ppp_M.jpg) no-repeat center center;
+    -o-background-size:cover;
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+    background-size:cover;
+}
 #section1 ul li h3, #section1 ul li span {
     /* tablet */
     margin-bottom:.1rem;
@@ -1214,7 +1230,15 @@ body {
     -moz-background-size:cover;
     -webkit-background-size:cover;
     background-size:cover;
-}   
+} 
+#section1 ul li.pt_ppp {
+    /* PC */
+    background:url(../images/works_thumb_ppp_L.jpg) no-repeat center center;
+    -o-background-size:cover;
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+    background-size:cover;
+}
 #section1 ul li h3 {
     /* PC */
     font-size:48px; 
